@@ -82,7 +82,8 @@ function Merge-OrgSettingValue
 
         [Parameter(Mandatory = $true)]
         [hashtable]
-        $UserSpecifiedOrgSetting
+        $UserSpecifiedOrgSetting,
+        $ThreadExceptionSettings
     )
 
     foreach ($ruleId in $UserSpecifiedOrgSetting.Keys)

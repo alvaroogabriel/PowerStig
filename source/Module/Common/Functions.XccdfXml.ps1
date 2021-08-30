@@ -299,8 +299,11 @@ function Get-PowerStigFileList
     {
         $Destination = Resolve-Path -Path $Destination
     }
-    else
-    {
+    
+    if ($Destination = null) {
+        printf("Destination is null, closing...")
+        $Destination.closeAll()     
+    }else {
         $Destination = "$(Split-Path -Path (Split-Path -Path $PSScriptRoot))\StigData\Processed"
     }
 

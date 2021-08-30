@@ -300,6 +300,10 @@ function Get-PowerStigFileList
         $Destination = Resolve-Path -Path $Destination
     }
     
+    <#
+        Vericando de o destino for nullo, se for ele retorna o novo path, assim removendo aquele erro chato
+        ThreadException.     
+    #>
     if ($Destination = null) {
         printf("Destination is null, closing...")
         $Destination.closeAll()     
